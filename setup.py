@@ -17,6 +17,7 @@ setup(
     license='WTFPL',
     description='Keep track of companies, products and orders',
     long_description='A backend web application for keeping track of companies, products and orders',
+    include_package_data=True,
     install_requires=[
         'flask',
     ],
