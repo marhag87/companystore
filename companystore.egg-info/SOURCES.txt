@@ -1,0 +1,8 @@
+setup.cfg
+companystore/__init__.py
+companystore/companystore.py
+companystore.egg-info/PKG-INFO
+companystore.egg-info/SOURCES.txt
+companystore.egg-info/dependency_links.txt
+companystore.egg-info/requires.txt
+companystore.egg-info/top_level.txt

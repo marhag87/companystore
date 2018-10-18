@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: companystore
+Version: 0.1.0
+Summary: Keep track of companies, products and orders
+Home-page: https://github.com/marhag87/companystore
+Author: marhag87
+Author-email: marhag87@gmail.com
+License: WTFPL
+Description: A backend web application for keeping track of companies, products and orders
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.6

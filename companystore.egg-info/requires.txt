@@ -1,0 +1,5 @@
+pyyamlconfig
+flask
+
+[test]
+pytest
