@@ -15,25 +15,25 @@ Tests are run with pytest, install [test] for test requirements `pip install .[t
 Usage
 -----
 Available endpoints:  
-/company/list  
+/company/list, GET  
 List all companies
 
-/company/create  
+/company/create, POST  
 Create a company. Parameters:  
 name, vatnumber, organizationnumber
 
-/product/list  
+/product/list, POST  
 List all products for a company. Parameters:  
 company
 
-/product/create  
+/product/create, POST  
 Create a product. Parameters:  
 name, company
 
-/purchase/list  
+/purchase/list, POST  
 List all purchases for a company. Parameters:  
 company
 
-/purchase/create
+/purchase/create, POST
 Create a purchase. Parameters:  
 company, products: [id, amount]
