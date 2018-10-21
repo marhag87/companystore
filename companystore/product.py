@@ -12,7 +12,11 @@ blueprint = Blueprint('product', __name__, url_prefix='/product')
 @blueprint.route('/list')
 def list_products():
     content = request.json
-    company_id = content.get('company')
+    if content is None:
+        return 'you need to specify a company', 400
+    company_id = content.get('company', None)
+    if company_id is None:
+        return 'you need to specify a company', 400
 
     db = get_db()
     products = db.execute(

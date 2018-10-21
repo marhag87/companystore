@@ -31,7 +31,12 @@ def client():
 
 def test_purchase(client):
     # Eric wants to create a purchase order
-    # He can see that he has no purchases
+    # He tries to list his purchases, but doesn't supply a company and gets an error
+    result = client.get('/purchase/list')
+    assert b'you need to specify a company' in result.data
+    assert result.status_code == 400
+
+    # He adds a company and can see that he has no purchases
     result = json.loads(client.get('/purchase/list', json={"company": 1}).data)
     assert result == []
 

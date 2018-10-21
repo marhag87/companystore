@@ -28,7 +28,12 @@ def client():
 
 def test_product(client):
     # Eric wants to create a product in his company
-    # He can see that he has no products
+    # He tries to list his products, but doesn't supply a company and gets an error
+    result = client.get('/product/list')
+    assert b'you need to specify a company' in result.data
+    assert result.status_code == 400
+
+    # He adds a company and can see that he has no products
     result = json.loads(client.get('/product/list', json={"company": 1}).data)
     assert result == []
 
