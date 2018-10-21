@@ -6,7 +6,8 @@ Installation
 ------------
 1. Create a virtual environment
 2. Install with pip `pip install .`
-3. Run with flask `FLASK_APP=companystore flask run`
+3. Add the API key for the VAT check to the config file `echo "VAT_API_KEY = 'mykey'" > instance/config.py`
+4. Run with flask `FLASK_APP=companystore flask run`
 
 Testing
 -------
