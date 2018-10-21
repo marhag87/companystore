@@ -17,7 +17,7 @@ def client():
 
     client = app.test_client()
     # Create a client for use in the tests
-    client.post('/company/create', json={"name": "MyCompany", "vatnumber": 1})
+    client.post('/company/create', json={"name": "MyCompany", "organizationnumber": 1})
     yield client
 
     os.close(database)

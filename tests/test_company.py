@@ -37,10 +37,10 @@ def test_company(client):
     assert b'you need to specify either an organization number or a VAT number' in result.data
     assert result.status_code == 400
 
-    # He adds a VAT number
-    result = client.post('/company/create', json={"name": "MyCompany", "vatnumber": 1})
+    # He adds an organization number
+    result = client.post('/company/create', json={"name": "MyCompany", "organizationnumber": 1})
     assert b'company "MyCompany" created' in result.data
 
     # He can now see his company in the company list
     result = json.loads(client.get('/company/list').data)
-    assert result == [{'name': 'MyCompany', 'organizationnumber': None, 'vatnumber': '1'}]
+    assert result == [{'name': 'MyCompany', 'organizationnumber': '1', 'vatnumber': None}]

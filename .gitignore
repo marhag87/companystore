@@ -2,3 +2,5 @@
 *.swp
 instance
 *.pyc
+config.py
+venv

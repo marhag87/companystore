@@ -1,5 +1,5 @@
-pyyamlconfig
 flask
+requests
 
 [test]
 pytest

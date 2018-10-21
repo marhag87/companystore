@@ -1,6 +1,11 @@
+MANIFEST.in
 setup.cfg
 companystore/__init__.py
-companystore/companystore.py
+companystore/company.py
+companystore/db.py
+companystore/product.py
+companystore/purchase.py
+companystore/schema.sql
 companystore.egg-info/PKG-INFO
 companystore.egg-info/SOURCES.txt
 companystore.egg-info/dependency_links.txt
