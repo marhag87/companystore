@@ -18,8 +18,11 @@ def client():
     client = app.test_client()
     # Create a client for use in the tests
     client.post('/company/create', json={"name": "MyCompany", "organizationnumber": 1})
+    client.post('/company/create', json={"name": "MyOtherCompany", "organizationnumber": 2})
     client.post('/product/create', json={"name": "NUC8I7HVK2", "company": 1})
     client.post('/product/create', json={"name": "Dell U2415", "company": 1})
+    client.post('/product/create', json={"name": "GameCube", "company": 2})
+    client.post('/purchase/create', json={"company": 2, "products": [{"id": 3, "amount": 1}]})
     yield client
 
     os.close(database)

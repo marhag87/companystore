@@ -31,7 +31,8 @@ Create a product. Parameters:
 name, company
 
 /purchase/list  
-List all purchases
+List all purchases for a company. Parameters:  
+company
 
 /purchase/create
 Create a purchase. Parameters:  

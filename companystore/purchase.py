@@ -10,10 +10,15 @@ blueprint = Blueprint('purchase', __name__, url_prefix='/purchase')
 
 @blueprint.route('/list')
 def list_purchase():
+    content = request.json
+    company_id = content.get('company')
+
     db = get_db()
     purchases = db.execute(
         'SELECT *'
         ' FROM purchase'
+        ' WHERE company_id = ?',
+        str(company_id),
     ).fetchall()
     purchase_ids = []
     for row in purchases:
