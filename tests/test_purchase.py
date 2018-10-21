@@ -32,12 +32,12 @@ def client():
 def test_purchase(client):
     # Eric wants to create a purchase order
     # He tries to list his purchases, but doesn't supply a company and gets an error
-    result = client.get('/purchase/list')
+    result = client.post('/purchase/list')
     assert b'you need to specify a company' in result.data
     assert result.status_code == 400
 
     # He adds a company and can see that he has no purchases
-    result = json.loads(client.get('/purchase/list', json={"company": 1}).data)
+    result = json.loads(client.post('/purchase/list', json={"company": 1}).data)
     assert result == []
 
     # He makes a purchase, but forgets to submit a company
@@ -60,7 +60,7 @@ def test_purchase(client):
     assert b'purchase created' in result.data
 
     # He can see it in the list
-    result = json.loads(client.get('/purchase/list', json={"company": 1}).data)
+    result = json.loads(client.post('/purchase/list', json={"company": 1}).data)
     assert result == [[{'name': 'NUC8I7HVK2', 'amount': 1}]]
 
     # He makes another purchase that has multiple products
@@ -82,7 +82,7 @@ def test_purchase(client):
     )
 
     # He can see both purchase orders
-    result = json.loads(client.get('/purchase/list', json={"company": 1}).data)
+    result = json.loads(client.post('/purchase/list', json={"company": 1}).data)
     print(result)
     assert result == [
         [{'name': 'NUC8I7HVK2', 'amount': 1}],

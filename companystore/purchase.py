@@ -8,7 +8,7 @@ from companystore.db import get_db
 blueprint = Blueprint('purchase', __name__, url_prefix='/purchase')
 
 
-@blueprint.route('/list')
+@blueprint.route('/list', methods=['POST'])
 def list_purchase():
     content = request.json
     if content is None:
