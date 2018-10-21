@@ -23,7 +23,8 @@ Create a company. Parameters:
 name, vatnumber, organizationnumber
 
 /product/list  
-List all products
+List all products for a company. Parameters:  
+company
 
 /product/create  
 Create a product. Parameters:  

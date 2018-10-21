@@ -11,10 +11,15 @@ blueprint = Blueprint('product', __name__, url_prefix='/product')
 
 @blueprint.route('/list')
 def list_products():
+    content = request.json
+    company_id = content.get('company')
+
     db = get_db()
     products = db.execute(
         'SELECT name, id'
         ' FROM product'
+        ' WHERE company_id = ?',
+        str(company_id),
     ).fetchall()
     data = []
     for row in products:

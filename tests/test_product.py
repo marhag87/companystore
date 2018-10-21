@@ -18,6 +18,8 @@ def client():
     client = app.test_client()
     # Create a client for use in the tests
     client.post('/company/create', json={"name": "MyCompany", "organizationnumber": 1})
+    client.post('/company/create', json={"name": "MyOtherCompany", "organizationnumber": 2})
+    client.post('/product/create', json={"name": "GameCube", "company": 2})
     yield client
 
     os.close(database)
@@ -46,4 +48,4 @@ def test_product(client):
 
     # He can see it in the list
     result = json.loads(client.get('/product/list', json={"company": 1}).data)
-    assert result == [{'name': 'NUC8I7HVK2', 'id': 1}]
+    assert result == [{'name': 'NUC8I7HVK2', 'id': 2}]
