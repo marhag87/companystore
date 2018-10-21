@@ -13,7 +13,7 @@ blueprint = Blueprint('product', __name__, url_prefix='/product')
 def list_products():
     db = get_db()
     products = db.execute(
-        'SELECT name'
+        'SELECT name, id'
         ' FROM product'
     ).fetchall()
     data = []

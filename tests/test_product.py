@@ -46,4 +46,4 @@ def test_product(client):
 
     # He can see it in the list
     result = json.loads(client.get('/product/list', json={"company": 1}).data)
-    assert result == [{'name': 'NUC8I7HVK2'}]
+    assert result == [{'name': 'NUC8I7HVK2', 'id': 1}]

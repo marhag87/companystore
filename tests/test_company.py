@@ -43,4 +43,4 @@ def test_company(client):
 
     # He can now see his company in the company list
     result = json.loads(client.get('/company/list').data)
-    assert result == [{'name': 'MyCompany', 'organizationnumber': '1', 'vatnumber': None}]
+    assert result == [{'name': 'MyCompany', 'organizationnumber': '1', 'vatnumber': None, 'id': 1}]

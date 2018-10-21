@@ -19,7 +19,7 @@ class ValidationError(Exception):
 def list_companies():
     db = get_db()
     companies = db.execute(
-        'SELECT name, organizationnumber, vatnumber'
+        'SELECT name, organizationnumber, vatnumber, id'
         ' FROM company'
     ).fetchall()
     data = []
