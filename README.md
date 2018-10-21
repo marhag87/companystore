@@ -11,3 +11,27 @@ Installation
 Testing
 -------
 Tests are run with pytest, install [test] for test requirements `pip install .[test]`
+
+Usage
+-----
+Available endpoints:  
+/company/list  
+List all companies
+
+/company/create  
+Create a company. Parameters:  
+name, vatnumber, organizationnumber
+
+/product/list  
+List all products
+
+/product/create  
+Create a product. Parameters:  
+name, company
+
+/purchase/list  
+List all purchases
+
+/purchase/create
+Create a purchase. Parameters:  
+company, products: [id, amount]
