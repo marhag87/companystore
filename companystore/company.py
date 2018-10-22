@@ -63,7 +63,7 @@ def create_company():
 def validate_vat(vatcode):
     response = requests.post(
         'https://api.cloudmersive.com/validate/vat/lookup',
-        headers={"Apikey": current_app.config.get('VAT_API_KEY')},
+        headers={"ApiKey": current_app.config.get('VAT_API_KEY')},
         json={"VatCode": vatcode},
     )
     if response.status_code == 200:
